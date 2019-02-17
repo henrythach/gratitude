@@ -1,3 +1,5 @@
+@import 'palette';
+
 .entry-form {
   margin: 0 auto;
   width: 300px;
@@ -20,12 +22,17 @@
 
 .entry-form__title-input,
 .entry-form__body-input {
+  flex: 1;
   padding: 10px;
-  font-family: -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue;
+  font-family: $font-family;
   margin-bottom: 1em;
   border: 1px solid #ccc;
   border-radius: 0.25em;
   font-size: 14px;
+}
+
+.field_with_errors > input {
+  border: 2px solid red;
 }
 
 .entry-form__body-input {
@@ -36,13 +43,19 @@
 .entry-form__submit-input {
   padding: 10px;
   border-radius: 0.25em;
-  background: #3c415e;
-  color: #fff;
+  color: #ffffff;
   font-weight: normal;
   text-transform: uppercase;
   border: none;
 
+  background: lighten($indigo, 20%);
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+  border-bottom-color: lighten($indigo, 10%);
+  transition: all 0.25s;
   &:hover {
     cursor: pointer;
+    background: lighten($indigo, 10%);
+    border-bottom-color: $indigo;
   }
 }

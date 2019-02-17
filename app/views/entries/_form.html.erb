@@ -2,18 +2,6 @@
   <span class="entry-form__prompt">Today, I am thankful for...</span>
 
   <%= form_with model: entry, local: true, class: 'flex flex-direction-column' do |form| %>
-    <% if entry.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(entry.errors.count, "error") %> prohibited this entry from being saved:</h2>
-
-        <ul>
-        <% entry.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
-
     <%= form.text_field :title,
                         placeholder: 'Title (required)',
                         class: 'entry-form__title-input' %>
@@ -24,6 +12,7 @@
 
     <%= form.hidden_field :user_id %>
 
-    <%= form.submit 'Create', class: 'entry-form__submit-input' %>
+    <%= form.submit 'Create',
+                    class: 'entry-form__submit-input' %>
   <% end %>
 </aside>
