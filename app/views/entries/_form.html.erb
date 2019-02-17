@@ -1,6 +1,5 @@
+<span class="entry-form__prompt">Today, I am thankful for...</span>
 <aside class="entry-form">
-  <span class="entry-form__prompt">Today, I am thankful for...</span>
-
   <%= form_with model: entry, local: true, class: 'flex flex-direction-column' do |form| %>
     <%= form.text_field :title,
                         placeholder: 'Title (required)',

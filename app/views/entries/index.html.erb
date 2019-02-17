@@ -2,31 +2,23 @@
 
 <%= render 'form', entry: @entry %>
 
-<% if @entries.empty? %>
-  <p>No entries.  Add one.</p>
-<% else %>
-  <table>
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>Title</th>
-        <th>Body</th>
-        <th>User</th>
-        <th colspan="2"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @entries.each do |entry| %>
-        <tr>
-          <td><%= entry.created_at %></td>
-          <td><%= entry.title %></td>
-          <td><%= entry.body %></td>
-          <td><%= entry.user.email %></td>
-          <td><%= link_to 'Show', entry %></td>
-          <td><%= link_to 'Delete', entry, method: :delete %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% end %>
+<section class="entries-timeline">
+  <% if @entries.any? %>
+    <% @entries.each do |entry| %>
+      <div class="entries-timeline__entry">
+        <h3 class="entry__title">
+          <%= entry.title %>
+        </h3>
+        <% if entry.body.present? %>
+          <p class="entry__body">
+            <%= entry.body %>
+          </p>
+        <% end %>
+        <ul>
+          <li><%= link_to 'Show', entry %></li>
+          <li><%= link_to 'Delete', entry, method: :delete %></li>
+        </ul>
+      </div>
+    <% end %>
+  <% end %>
+</section>

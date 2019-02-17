@@ -2,22 +2,22 @@
 
 .entry-form {
   margin: 0 auto;
-  max-width: 300px;
+  max-width: 400px;
   padding: 20px;
   background: #fff;
   border-radius: 0.5em;
   box-shadow: 0 10px 20px hsla(0, 0%, 0%, 0.15), 0 3px 6px hsla(0, 0%, 0%, 0.10);
-  margin-top: 2em;
+  margin-top: 1.5em;
   margin-bottom: 3.5em;
 }
 
 .entry-form__prompt {
   display: block;
   font-size: 18px;
-  color: #444;
+  color: #ffffff;
   font-weight: normal;
   font-style: italic;
-  margin-bottom: 20px;
+  text-align: center;
 }
 
 .entry-form__title-input,
@@ -59,3 +59,13 @@
     border-bottom-color: $indigo;
   }
 }
+
+.entries-timeline {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: lighten($yellow, 10%);
+  line-height: 1.25em;
+  font-size: 18px;
+}
+
