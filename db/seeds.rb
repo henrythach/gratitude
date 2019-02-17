@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+user = User.first
+
+50.times do
+  Entry.new(user: user,
+            title: Faker::Book.unique.title,
+            body: Faker::Lorem.paragraph,
+            created_at: Faker::Date.between(10.days.ago, Date.today)).save
+end
