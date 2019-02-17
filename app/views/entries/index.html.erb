@@ -4,21 +4,27 @@
 
 <section class="entries-timeline">
   <% if @entries.any? %>
-    <% @entries.each do |entry| %>
-      <div class="entries-timeline__entry">
-        <h3 class="entry__title">
-          <%= entry.title %>
-        </h3>
-        <% if entry.body.present? %>
-          <p class="entry__body">
-            <%= entry.body %>
-          </p>
-        <% end %>
-        <ul>
-          <li><%= link_to 'Show', entry %></li>
-          <li><%= link_to 'Delete', entry, method: :delete %></li>
-        </ul>
+    <div class="entries-timeline__dayblock">
+      <div class="entries-timeline__dayblock__day">
+        Sun, Feb 17
       </div>
-    <% end %>
+      <div class="entries-timeline__dayblock__entries">
+        <% @entries.each do |entry| %>
+          <div class="entries-timeline__entry">
+            <h3 class="entry__title">
+              <%= entry.title %>
+            </h3>
+            <% if entry.body.present? %>
+              <p class="entry__body">
+                <%= entry.body %>
+              </p>
+            <% end %>
+            <ul>
+              <li><%= link_to 'Show', entry %></li>
+              <li><%= link_to 'Delete', entry, method: :delete %></li>
+            </ul>
+          </div>
+        <% end %>
+    </div>
   <% end %>
 </section>

@@ -2,6 +2,7 @@
 <aside class="entry-form">
   <%= form_with model: entry, local: true, class: 'flex flex-direction-column' do |form| %>
     <%= form.text_field :title,
+                        required: true,
                         placeholder: 'Title (required)',
                         class: 'entry-form__title-input' %>
 

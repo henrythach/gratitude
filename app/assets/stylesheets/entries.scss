@@ -64,8 +64,57 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: lighten($yellow, 10%);
-  line-height: 1.25em;
+  color: lighten($indigo, 60%);
   font-size: 18px;
 }
 
+.entries-timeline__dayblock {
+  display: flex;
+  flex-direction: row;
+
+  @media screen and (max-width: 520px) {
+    flex-direction: column;
+  }
+}
+
+.entries-timeline__dayblock__day {
+  min-width: 150px;
+  font-weight: bold;
+  position: relative;
+
+  &::after {
+    content: "•";
+    position: absolute;
+    right: -7px;
+    font-size: 26px;
+    top: -5px;
+  }
+
+  @media screen and (min-width: 520px) {
+    border-right: 1px solid lighten($indigo, 60%);
+  }
+
+  @media screen and (max-width: 520px) {
+    padding-bottom: 20px;
+    border-bottom: 1px solid aliceblue;
+    margin-bottom: 20px;
+  }
+}
+.entries-timeline__dayblock__entries {
+  flex: 3;
+
+  @media screen and (min-width: 520px) {
+    margin-left: 20px;
+  }
+
+  .entry__title {
+    font-size: 24px;
+    line-height: 1em;
+    margin-top: 0;
+    font-weight: normal;
+  }
+
+  .entry__body {
+    line-height: 1.65em;
+  }
+}
