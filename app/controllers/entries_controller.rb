@@ -5,7 +5,8 @@ class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.json
   def index
-    @entries = Entry.all
+    @entry = Entry.new(user: current_user)
+    @entries = Entry.where(user: current_user).order(created_at: :desc)
   end
 
   # GET /entries/1
@@ -15,8 +16,7 @@ class EntriesController < ApplicationController
 
   # GET /entries/new
   def new
-    @entry = Entry.new
-    @entry.user = current_user
+    @entry = Entry.new(user: current_user)
   end
 
   # GET /entries/1/edit
