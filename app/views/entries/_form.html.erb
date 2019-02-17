@@ -1,27 +1,29 @@
-<%= form_with(model: entry, local: true) do |form| %>
-  <% if entry.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(entry.errors.count, "error") %> prohibited this entry from being saved:</h2>
+<aside class="entry-form">
+  <span class="entry-form__prompt">Today, I am thankful for...</span>
 
-      <ul>
-      <% entry.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+  <%= form_with model: entry, local: true, class: 'flex flex-direction-column' do |form| %>
+    <% if entry.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(entry.errors.count, "error") %> prohibited this entry from being saved:</h2>
+
+        <ul>
+        <% entry.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <%= form.text_field :title,
+                        placeholder: 'Title (required)',
+                        class: 'entry-form__title-input' %>
+
+    <%= form.text_area :body,
+                       placeholder: 'More description (optional)',
+                       class: 'entry-form__body-input' %>
+
+    <%= form.hidden_field :user_id %>
+
+    <%= form.submit 'Create', class: 'entry-form__submit-input' %>
   <% end %>
-
-  <div class="field">
-    <%= form.text_field :title, placeholder: 'Title' %>
-  </div>
-
-  <div class="field">
-    <%= form.text_area :body %>
-  </div>
-
-  <%= form.hidden_field :user_id %>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</aside>

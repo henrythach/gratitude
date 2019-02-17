@@ -1,3 +1,48 @@
-// Place all the styles related to the Entries controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.entry-form {
+  margin: 0 auto;
+  width: 300px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 0.5em;
+  box-shadow: 0 10px 20px hsla(0, 0%, 0%, 0.15), 0 3px 6px hsla(0, 0%, 0%, 0.10);
+  margin-top: 2em;
+  margin-bottom: 3.5em;
+}
+
+.entry-form__prompt {
+  display: block;
+  font-size: 18px;
+  color: #444;
+  font-weight: normal;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.entry-form__title-input,
+.entry-form__body-input {
+  padding: 10px;
+  font-family: -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue;
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+  border-radius: 0.25em;
+  font-size: 14px;
+}
+
+.entry-form__body-input {
+  resize: vertical;
+  min-height: 8em;
+}
+
+.entry-form__submit-input {
+  padding: 10px;
+  border-radius: 0.25em;
+  background: #3c415e;
+  color: #fff;
+  font-weight: normal;
+  text-transform: uppercase;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

@@ -10,20 +10,26 @@
   </head>
 
   <body>
-    <header>
-      <h2>
-        <%= link_to('Gratitude Journal', root_path) %>
-      </h2>
-      <ul>
-        <% if user_signed_in? %>
-          <li><%= link_to('Edit profile', edit_user_registration_path) %></li>
-          <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
-        <% else %>
-          <li><%= link_to('Login', new_user_session_path) %></li>
-        <% end %>
-      </ul>
+    <header class="header">
+      <div class="container mx-auto flex flex-justify-space-between flex-align-items-center">
+        <h2><%= link_to 'Gratitude Journal', root_path, class: 'nav-link logo' %></h2>
+        <nav>
+          <ul>
+            <% if user_signed_in? %>
+              <%= link_to 'Edit profile', edit_user_registration_path, class: 'nav-link padding-10' %>
+              <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link padding-10' %>
+            <% else %>
+              <%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link padding-10' %>
+              <%= link_to 'Login', new_user_session_path, class: 'nav-link padding-10' %>
+            <% end %>
+          </ul>
+        </nav>
+      </div>
     </header>
-    <hr>
-    <%= yield %>
+    <main>
+      <div class="container mx-auto">
+        <%= yield %>
+      </div>
+    </main>
   </body>
 </html>
