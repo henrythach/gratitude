@@ -12,6 +12,21 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <header>
+      <h2>
+        <%= link_to('Gratitude Journal', root_path) %>
+      </h2>
+      <ul>
+        <% if user_signed_in? %>
+          <li><%= link_to('Entries', entries_path) %></li>
+          <li><%= link_to('Edit profile', edit_user_registration_path) %></li>
+          <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
+        <% else %>
+          <li><%= link_to('Login', new_user_session_path) %></li>
+        <% end %>
+      </ul>
+    </header>
+    <hr>
     <%= yield %>
   </body>
 </html>
