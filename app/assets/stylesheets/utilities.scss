@@ -1,7 +1,9 @@
-.container { width: 800px; }
 .flex { display: flex; }
 .flex-direction-column { flex-direction: column; }
 .flex-align-items-center { align-items: center; }
 .flex-justify-space-between { justify-content: space-between; }
 .mx-auto { margin: 0 auto; }
 .padding-10 { padding: 10px; }
+
+
+.container { max-width: 800px; padding: 0 20px; }

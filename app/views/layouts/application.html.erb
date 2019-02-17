@@ -12,11 +12,11 @@
   <body>
     <header class="header">
       <div class="container mx-auto flex flex-justify-space-between flex-align-items-center">
-        <h2><%= link_to 'Gratitude Journal', root_path, class: 'nav-link logo' %></h2>
+        <h2><%= link_to 'Gratitude', root_path, class: 'nav-link logo' %></h2>
         <nav>
           <ul>
             <% if user_signed_in? %>
-              <%= link_to 'Edit profile', edit_user_registration_path, class: 'nav-link padding-10' %>
+              <%= link_to 'Profile', edit_user_registration_path, class: 'nav-link padding-10' %>
               <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link padding-10' %>
             <% else %>
               <%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link padding-10' %>
