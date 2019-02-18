@@ -30,3 +30,6 @@
 /node_modules
 yarn-debug.log*
 .yarn-integrity
+
+# Ignore JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and WebStorm
+.idea/
