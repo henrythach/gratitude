@@ -6,7 +6,8 @@ class EntriesController < ApplicationController
   # GET /entries.json
   def index
     @entry = Entry.new(user: current_user)
-    @entries = Entry.where(user: current_user).order(created_at: :desc)
+    @entries = Entry.all_for_user(current_user)
+                    .order(created_at: :desc)
   end
 
   # GET /entries/1
