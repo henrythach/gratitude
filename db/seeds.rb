@@ -10,7 +10,7 @@ user = User.first
 
 50.times do
   Entry.new(user: user,
-            title: Faker::Book.unique.title,
-            body: Faker::Lorem.paragraph,
+            title: Faker::Lorem.sentence,
+            body: Faker::Lorem.sentence(25, true),
             created_at: Faker::Date.between(10.days.ago, Date.today)).save
 end

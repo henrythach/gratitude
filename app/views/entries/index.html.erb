@@ -3,17 +3,21 @@
 <%= render 'form', entry: @entry %>
 
 <section class="entries-timeline">
-  <% if @entries.any? %>
+  <% @entries.group_by(&:timeline_period).each do |date, entries_by_day| %>
     <div class="entries-timeline__dayblock">
       <div class="entries-timeline__dayblock__day">
-        Sun, Feb 17
+        <%= date %>
       </div>
       <div class="entries-timeline__dayblock__entries">
-        <% @entries.each do |entry| %>
+        <% entries_by_day.each do |entry| %>
           <div class="entries-timeline__entry">
             <h3 class="entry__title">
               <%= entry.title %>
             </h3>
+            <span class="entry__subtitle"
+                  title="<%= entry.created_at.strftime('%A, %B %e, %Y %I:%M %p') %>">
+              <%= time_ago_in_words entry.created_at %> ago
+            </span>
             <% if entry.body.present? %>
               <p class="entry__body">
                 <%= entry.body %>
@@ -21,6 +25,7 @@
             <% end %>
           </div>
         <% end %>
+      </div>
     </div>
   <% end %>
 </section>
