@@ -52,6 +52,10 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   # Random data generator
   gem 'faker'
+  # Live reload
+  gem 'guard', '~> 2.15'
+  gem 'rack-livereload'
+  gem 'guard-livereload', '~> 2.5', require: false
 end
 
 group :test do
