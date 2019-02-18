@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   resources :entries
 
+  get 'export/entries', to: 'export#entries'
+
   authenticated :user do
     root 'entries#index', as: :authenticated_root
   end
