@@ -2,17 +2,14 @@
 
 .header {
   background: $indigo;
-}
 
-.logo {
-  font-weight: normal;
-}
+  .logo {
+    font-weight: normal;
+  }
 
-.nav-link {
-  color: #ffffff;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
+  .nav-link {
+    color: #ffffff;
   }
 }
+
+

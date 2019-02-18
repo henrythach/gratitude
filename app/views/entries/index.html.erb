@@ -1,4 +1,6 @@
-<%= render 'form', entry: @entry %>
+<aside class="shadow-form">
+  <%= render 'form', entry: @entry %>
+</aside>
 
 <section class="entries-timeline">
   <% @entries.group_by(&:timeline_period).each do |date, entries_by_day| %>
@@ -10,7 +12,7 @@
         <% entries_by_day.each do |entry| %>
           <div class="entries-timeline__entry">
             <h3 class="entry__title">
-              <%= entry.title %>
+              <%= link_to entry.title, entry %>
             </h3>
             <span class="entry__subtitle"
                   title="<%= entry.created_at.strftime('%A, %B %e, %Y %I:%M %p') %>">

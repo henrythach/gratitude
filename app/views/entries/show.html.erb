@@ -1,17 +1,8 @@
-<p>
-  <strong>Title:</strong>
-  <%= @entry.title %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= @entry.body %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @entry.user.email %>
-</p>
-
-<%= link_to 'Edit', edit_entry_path(@entry) %> |
-<%= link_to 'Back', entries_path %>
+<aside class="shadow-form">
+  <h2><%= @entry.title %></h2>
+  <p><%= @entry.body %></p>
+  <footer>
+    <%= link_to 'Back', entries_path %>
+    <%= link_to 'Edit', edit_entry_path(@entry) %>
+  </footer>
+</aside>

@@ -1,4 +1,8 @@
-<%= render 'form', entry: @entry %>
+<aside class="shadow-form">
+  <%= render 'form', entry: @entry %>
+  <footer>
+    <%= link_to 'Back', entries_path %>
+    <%= link_to 'Show', @entry %>
+  </footer>
+</aside>
 
-<%= link_to 'Show', @entry %> |
-<%= link_to 'Back', entries_path %>

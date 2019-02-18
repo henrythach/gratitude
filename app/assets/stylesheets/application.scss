@@ -16,3 +16,11 @@
  */
 
 .field_with_errors { display: inline-flex; }
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
