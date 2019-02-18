@@ -11,12 +11,3 @@
 .float-right { float: right; }
 .clearfix { overflow: auto; }
 .clearfix::after { content: ""; clear: both; display: table; }
-
-.hero-title {
-  display: block;
-  font-size: 18px;
-  color: #ffffff;
-  font-weight: normal;
-  font-style: italic;
-  text-align: center;
-}
