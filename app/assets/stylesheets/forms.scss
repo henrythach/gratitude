@@ -1,0 +1,96 @@
+@import "palette";
+
+$shadow-form-max-width: 400px;
+$shadow-form-padding: 20px;
+$shadow-form-border-radius: 10px;
+$shadow-form-input-padding: 10px;
+$shadow-form-input-radius: 5px;
+
+.shadow-form {
+  margin: 0 auto;
+  max-width: $shadow-form-max-width;
+  padding: $shadow-form-padding $shadow-form-padding 0;
+  background: #fff;
+  border-radius: $shadow-form-border-radius;
+  box-shadow: 0 10px 20px hsla(0, 0%, 0%, 0.15), 0 3px 6px hsla(0, 0%, 0%, 0.10);
+  margin-top: 1.5em;
+  margin-bottom: 3.5em;
+}
+
+.shadow-form footer.devise-links {
+  padding: 0 0 $shadow-form-padding;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  > a {
+    text-decoration: none;
+    color: #666666;
+    font-weight: 600;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.shadow-form h2 {
+  margin: 0 0 $shadow-form-padding;
+  font-weight: normal;
+  font-size: 24px;
+  color: #666666;
+}
+
+.shadow-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.shadow-form label {
+  display: block;
+  font-size: 12px;
+  padding: 0 0 5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: .1rem;
+  color: #888;
+}
+
+.shadow-form input, textarea {
+  flex: 1;
+  padding: $shadow-form-input-padding;
+  font-family: $font-family;
+  margin-bottom: $shadow-form-padding;
+  border: 1px solid #ccc;
+  border-radius: $shadow-form-input-radius;
+  font-size: 14px;
+}
+
+.shadow-form textarea {
+  resize: none;
+  min-height: 8em;
+}
+
+.field_with_errors > input {
+  border: 2px solid red;
+}
+
+.shadow-form input[type="submit"] {
+  padding: $shadow-form-input-padding;
+  border-radius: $shadow-form-input-radius;
+  color: #ffffff;
+  font-weight: normal;
+  text-transform: uppercase;
+  border: none;
+
+  background: lighten($indigo, 20%);
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+  border-bottom-color: lighten($indigo, 10%);
+  transition: all 0.25s;
+  &:hover {
+    cursor: pointer;
+    background: lighten($indigo, 10%);
+    border-bottom-color: $indigo;
+  }
+}

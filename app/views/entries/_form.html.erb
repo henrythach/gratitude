@@ -1,14 +1,13 @@
-<span class="entry-form__prompt">Today, I am thankful for...</span>
-<aside class="entry-form">
+<h2 class="hero-title">Today, I am thankful for...</h2>
+<aside class="shadow-form">
   <%= form_with model: entry, local: true, class: 'flex flex-direction-column' do |form| %>
     <%= form.text_field :title,
                         required: true,
-                        placeholder: 'Title (required)',
+                        placeholder: 'I am thankful for...',
                         class: 'entry-form__title-input' %>
 
     <%= form.text_area :body,
-                       placeholder: 'More description (optional)',
-                       class: 'entry-form__body-input' %>
+                       placeholder: 'More description (optional)' %>
 
     <%= form.hidden_field :user_id %>
 
