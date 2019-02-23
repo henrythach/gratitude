@@ -13,18 +13,20 @@
       <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>
 
-    <%= f.label :password %>
+    <%= f.label :password, 'New password' %>
     <%= f.password_field :password,
                          autocomplete: "new-password",
                          placeholder: "#{@minimum_password_length} characters minimum" %>
 
-    <%= f.label :password_confirmation %>
+    <%= f.label :password_confirmation, 'New password confirmation' %>
     <%= f.password_field :password_confirmation,
-                         autocomplete: "new-password" %>
+                         autocomplete: "new-password",
+                         placeholder: "#{@minimum_password_length} characters minimum" %>
 
     <%= f.label :current_password %>
     <%= f.password_field :current_password,
-                         autocomplete: "current-password" %>
+                         autocomplete: "current-password",
+                         placeholder: "Required if editing profile" %>
 
     <%= render "devise/shared/error_messages", resource: resource %>
 
