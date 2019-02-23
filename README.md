@@ -1,24 +1,10 @@
-# README
+# Gratitude Journal
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple gratitude journal for keeping track of what you're grateful for.
 
-Things you may want to cover:
+![screenshot](./screenshot.png)
 
-* Ruby version
+## Tech Stack
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Ruby on Rails 5
+- PostgreSQL
